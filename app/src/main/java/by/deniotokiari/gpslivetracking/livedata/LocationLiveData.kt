@@ -26,8 +26,8 @@ class LocationLiveData(private val context: Context) : LiveData<Location>() {
 
     private val locationRequest: LocationRequest by lazy {
         LocationRequest().apply {
-            interval = DateUtils.SECOND_IN_MILLIS * 10
             fastestInterval = DateUtils.SECOND_IN_MILLIS * 5
+            interval = DateUtils.SECOND_IN_MILLIS * 10
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
     }
