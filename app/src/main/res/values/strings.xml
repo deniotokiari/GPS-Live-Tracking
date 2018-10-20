@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">GPS Live Tracking</string>
+    <string name="APP_NAME">GPS Live Tracking</string>
+    <string name="YOUR_LOCATION">Your location</string>
 </resources>

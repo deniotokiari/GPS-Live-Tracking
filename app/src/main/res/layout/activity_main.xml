@@ -6,12 +6,9 @@
         android:layout_height="match_parent"
         tools:context=".activity.MainActivity">
 
-    <TextView
-            android:id="@+id/tv_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
-
-    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                 android:id="@+id/fl_map"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_collection"
+    />
 </RelativeLayout>
