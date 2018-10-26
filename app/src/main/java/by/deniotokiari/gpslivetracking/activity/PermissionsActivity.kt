@@ -52,7 +52,7 @@ class PermissionsActivity : AppCompatActivity() {
         }
 
         if (fineLocationResult && internetResult && networkStateResult) {
-            startActivity(Intent(this@PermissionsActivity, MainActivity::class.java))
+            startActivity(Intent(this@PermissionsActivity, AddLocationActivity::class.java))
             finish()
         }
     }
