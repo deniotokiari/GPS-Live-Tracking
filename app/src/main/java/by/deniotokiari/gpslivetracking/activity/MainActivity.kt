@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val currentLocation: LiveData<Location> by kodein.instance()
+        /*val currentLocation: LiveData<Location> by kodein.instance()
 
         setContentView(R.layout.activity_main)
 
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-        }
+        }*/
     }
 
 }

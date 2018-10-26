@@ -15,24 +15,29 @@ class PermissionResolver {
 
         fun permissionGranted(permission: String)
 
+        fun permissionDenied(permission: String)
+
     }
 
     companion object {
 
         private const val PERMISSION_REQUEST_CODE = 4242
 
-        const val SHOW_EXPLANATION = 0
-        const val REQUEST_PERMISSION = 1
+        const val PERMISSION_EXPLANATION = 0
+        const val PERMISSION_REQUEST = 1
         const val PERMISSION_GRANTED = 2
+        const val PERMISSION_DENIED = 3
 
         fun checkPermissionState(activity: Activity, permission: String): Int {
             return if (ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_GRANTED) {
                 PERMISSION_GRANTED
+            } else if (ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_DENIED) {
+                PERMISSION_DENIED
             } else {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
-                    SHOW_EXPLANATION
+                    PERMISSION_EXPLANATION
                 } else {
-                    REQUEST_PERMISSION
+                    PERMISSION_REQUEST
                 }
             }
         }
@@ -47,9 +52,10 @@ class PermissionResolver {
             val result = checkPermissionState(activity, permission)
 
             when (result) {
-                SHOW_EXPLANATION -> callback.showExplanation(permission)
-                REQUEST_PERMISSION -> callback.requestPermission(permission)
+                PERMISSION_EXPLANATION -> callback.showExplanation(permission)
+                PERMISSION_REQUEST -> callback.requestPermission(permission)
                 PERMISSION_GRANTED -> callback.permissionGranted(permission)
+                PERMISSION_DENIED -> callback.permissionDenied(permission)
             }
         }
 

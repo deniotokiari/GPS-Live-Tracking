@@ -1,4 +1,8 @@
 <resources>
     <string name="APP_NAME">GPS Live Tracking</string>
     <string name="YOUR_LOCATION">Your location</string>
+    <string name="PERMISSION_NEED_TITLE">Our app need this permission</string>
+    <string name="PERMISSION_NEED_BODY">To able work, our app need allowed permission from app setting</string>
+    <string name="BUTTON_APP_SETTINGS">App settings</string>
+    <string name="BUTTON_EXIT">Exit</string>
 </resources>
