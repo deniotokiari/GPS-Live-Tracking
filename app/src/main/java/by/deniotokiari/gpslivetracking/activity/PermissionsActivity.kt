@@ -3,7 +3,7 @@ package by.deniotokiari.gpslivetracking.activity
 import android.Manifest
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import by.deniotokiari.gpslivetracking.util.PermissionResolver
 
 class PermissionsActivity : AppCompatActivity() {

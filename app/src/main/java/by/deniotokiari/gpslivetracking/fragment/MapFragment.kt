@@ -1,21 +1,16 @@
 package by.deniotokiari.gpslivetracking.fragment
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Observer
 import android.location.Location
 import android.os.Bundle
-import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import by.deniotokiari.gpslivetracking.R
 import by.deniotokiari.gpslivetracking.extension.kodein
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptor
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import org.kodein.di.generic.instance
 
 class MapFragment : SupportMapFragment() {
@@ -33,10 +28,10 @@ class MapFragment : SupportMapFragment() {
 
     public var locationCallback: ((LatLng) -> Unit)? = null
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(p0: Bundle?) {
+        super.onCreate(p0)
 
-        googleMap.observe(this, Observer { map ->
+        /*googleMap.observe(this, Observer { map ->
             map?.let {
                 currentLocation.observe(this, Observer { location ->
                     location?.let {
@@ -78,7 +73,7 @@ class MapFragment : SupportMapFragment() {
                     }
                 })
             }
-        })
+        })*/
 
         getMapAsync { map ->
             googleMap.value = map

@@ -1,8 +1,8 @@
 package by.deniotokiari.gpslivetracking.di
 
-import android.arch.lifecycle.LiveData
 import android.content.Context
 import android.location.Location
+import androidx.lifecycle.LiveData
 import by.deniotokiari.gpslivetracking.livedata.LocationLiveData
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind

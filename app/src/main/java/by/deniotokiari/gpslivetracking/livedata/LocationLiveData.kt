@@ -1,17 +1,17 @@
 package by.deniotokiari.gpslivetracking.livedata
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.LiveData
 import android.content.Context
 import android.location.Location
 import android.text.format.DateUtils
+import androidx.lifecycle.LiveData
 import com.google.android.gms.location.*
 
 class LocationLiveData(private val context: Context) : LiveData<Location>() {
 
     private val fusedLocationClient: FusedLocationProviderClient by lazy {
         LocationServices.getFusedLocationProviderClient(
-                context
+            context
         )
     }
     private val locationCallback: LocationCallback by lazy {

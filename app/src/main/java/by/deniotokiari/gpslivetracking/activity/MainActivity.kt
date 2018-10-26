@@ -1,15 +1,19 @@
 package by.deniotokiari.gpslivetracking.activity
 
+import android.location.Location
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.deniotokiari.gpslivetracking.R
+import by.deniotokiari.gpslivetracking.extension.kodein
 import by.deniotokiari.gpslivetracking.fragment.MapFragment
 import com.google.android.gms.maps.model.LatLng
+import org.kodein.di.generic.instance
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +24,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val currentLocation: LiveData<Location> by kodein.instance()
+
         setContentView(R.layout.activity_main)
 
         val collectionRv: RecyclerView = findViewById(R.id.rv_collection)
-        collectionRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        collectionRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         collectionRv.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

@@ -1,0 +1,55 @@
+ext.versions = [
+        compileSdk          : 28,
+        minSdk              : 15,
+        targetSdk           : 28,
+
+        kotlin              : '1.2.71',
+        kotloin_coroutines  : '0.30.2',
+
+        build_gradle        : '3.2.1',
+
+        kodein              : '5.3.0',
+
+        play_services       : '16.0.0',
+
+        lifecycle_compiler  : '2.0.0',
+
+        room                : '2.1.0-alpha01',
+
+        appcompat           : '1.0.0',
+
+        recyclerview        : '1.0.0',
+
+        lifecycle_extensions: '2.0.0',
+
+        versions_plugin     : '0.20.0'
+]
+
+ext.gradlePlugins = [
+        build_gradle   : "com.android.tools.build:gradle:$versions.build_gradle",
+
+        kotlin         : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+
+        versions_plugin: "com.github.ben-manes:gradle-versions-plugin:$versions.versions_plugin"
+]
+
+ext.libs = [
+        kotlin                   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+        kotlin_coroutines_core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotloin_coroutines",
+        kotlin_coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotloin_coroutines",
+
+        kodein                   : "org.kodein.di:kodein-di-generic-jvm:$versions.kodein",
+        play_services_location   : "com.google.android.gms:play-services-location:$versions.play_services",
+        play_services_maps       : "com.google.android.gms:play-services-maps:$versions.play_services",
+
+        lifecycle_compiler       : "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle_compiler",
+
+        room_runtime             : "androidx.room:room-runtime:$versions.room",
+        room_compiler            : "androidx.room:room-compiler:$versions.room",
+
+        appcompat                : "androidx.appcompat:appcompat:$versions.appcompat",
+
+        recyclerview             : "androidx.recyclerview:recyclerview:$versions.recyclerview",
+
+        lifecycle_extensions     : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle_extensions"
+]
