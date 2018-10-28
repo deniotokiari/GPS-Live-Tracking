@@ -22,7 +22,11 @@ ext.versions = [
 
         lifecycle_extensions: '2.0.0',
 
-        versions_plugin     : '0.20.0'
+        versions_plugin     : '0.20.0',
+
+        robolectric         : '4.0',
+
+        junit               : '4.12',
 ]
 
 ext.gradlePlugins = [
@@ -51,5 +55,9 @@ ext.libs = [
 
         recyclerview             : "androidx.recyclerview:recyclerview:$versions.recyclerview",
 
-        lifecycle_extensions     : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle_extensions"
+        lifecycle_extensions     : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle_extensions",
+
+        robolectric              : "org.robolectric:robolectric:$versions.robolectric",
+
+        junit                    : "junit:junit:$versions.junit",
 ]

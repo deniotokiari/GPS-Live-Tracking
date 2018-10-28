@@ -41,4 +41,7 @@ dependencies {
 
     kapt libs.lifecycle_compiler
     kapt libs.room_compiler
+
+    testImplementation libs.robolectric
+    testImplementation libs.junit
 }

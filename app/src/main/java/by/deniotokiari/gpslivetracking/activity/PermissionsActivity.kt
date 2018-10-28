@@ -10,13 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import by.deniotokiari.gpslivetracking.R
 import by.deniotokiari.gpslivetracking.util.PermissionResolver
 
-
 class PermissionsActivity : AppCompatActivity() {
 
     private val permissionsState: HashMap<String, Int> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_permissions)
+    }
+
+    override fun onStart() {
+        super.onStart()
 
         packageManager
             .getPackageInfo(packageName, PackageManager.GET_PERMISSIONS)
